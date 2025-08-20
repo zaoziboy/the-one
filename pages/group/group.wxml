@@ -1,0 +1,39 @@
+<view class="container">
+  <view class="group-header">
+    <text class="group-title">第{{groupId}}组</text>
+    <text class="group-desc">小组成员展示</text>
+  </view>
+
+  <!-- 打call区域 -->
+  <view class="call-section">
+    <button 
+      class="call-btn {{hasBeenCalled ? 'called' : ''}}" 
+      bindtap="handleCall"
+      disabled="{{hasBeenCalled || callLimited}}"
+    >
+      <text class="call-icon">👍</text>
+      <text class="call-text">{{callButtonText}}</text>
+      <text class="call-count" wx:if="{{hasBeenCalled}}">已打call</text>
+    </button>
+    <text class="call-tip" wx:if="{{callTip}}">{{callTip}}</text>
+  </view>
+
+  <view class="members-list">
+    <view 
+      class="member-card" 
+      wx:for="{{members}}" 
+      wx:key="id"
+      bindtap="showStudentDetail"
+      data-student="{{item}}"
+    >
+      <view class="avatar-placeholder">
+        <text>{{item.name.charAt(0)}}</text>
+      </view>
+      <view class="member-info">
+        <text class="member-name">{{item.name}}</text>
+        <text class="member-role">{{item.role}}</text>
+      </view>
+      <view class="detail-arrow">></view>
+    </view>
+  </view>
+</view>
