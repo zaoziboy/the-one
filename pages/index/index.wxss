@@ -1,0 +1,218 @@
+.container {
+  background-color: #f0f8ff;
+  min-height: 100vh;
+  padding: 20rpx;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40rpx;
+  padding: 40rpx 0;
+  margin-top: 40rpx;
+}
+
+.title {
+  display: block;
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #1976D2;
+  margin-bottom: 20rpx;
+}
+
+.subtitle {
+  font-size: 32rpx;
+  color: #666;
+}
+
+
+/* 助教卡片样式 */
+.assistant-card {
+  background: white;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4rpx 12rpx rgba(25, 118, 210, 0.1);
+  border: 2rpx solid #e3f2fd;
+}
+
+.assistant-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+
+.assistant-avatar image {
+  width: 100%;
+  height: 100%;
+}
+
+.assistant-info {
+  flex: 1;
+}
+
+.assistant-name {
+  display: block;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.assistant-title {
+  font-size: 24rpx;
+  color: #666;
+}
+
+
+.groups-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.group-card {
+  width: 48%;
+  background: white;
+  border-radius: 20rpx;
+  padding: 40rpx 20rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 12rpx rgba(25, 118, 210, 0.1);
+  border: 2rpx solid #e3f2fd;
+  text-align: center;
+}
+
+.group-number {
+  background: #1976D2;
+  color: white;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  font-weight: bold;
+  margin: 0 auto 20rpx;
+}
+
+.group-name {
+  display: block;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.member-count {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.arrow {
+  font-size: 36rpx;
+  color: #ccc;
+  margin-top: 20rpx;
+}
+
+
+.call-count-section {
+  margin: 15rpx 0 10rpx 0;
+  display: flex;
+  justify-content: center;
+}
+
+.call-count-badge {
+  background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+  color: white;
+  border-radius: 25rpx;
+  padding: 8rpx 16rpx;
+  display: flex;
+  align-items: center;
+  gap: 6rpx;
+  box-shadow: 0 4rpx 12rpx rgba(255, 107, 107, 0.3);
+  min-width: 60rpx;
+  justify-content: center;
+}
+
+.call-count-icon {
+  font-size: 24rpx;
+  line-height: 1;
+}
+
+.call-count-number {
+  font-size: 24rpx;
+  font-weight: bold;
+  line-height: 1;
+  min-width: 20rpx;
+  text-align: center;
+}
+
+/* 调整箭头位置 */
+.arrow {
+  margin-top: 10rpx;
+}
+
+
+/* 透明点击层 */
+.click-capture-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+
+.teacher-call-tip {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 30rpx 50rpx;
+  border-radius: 20rpx;
+  z-index: 1000;
+  animation: tipShow 0.3s ease;
+}
+
+.tip-message {
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* 提示动画 */
+@keyframes tipShow {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* 调整原有元素层级 */
+.group-card {
+  position: relative;
+  z-index: 2;
+}
+
+.header {
+  position: relative;
+  z-index: 2;
+}
+
+.groups-container {
+  position: relative;
+  z-index: 2;
+}
+

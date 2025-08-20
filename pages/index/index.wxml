@@ -1,0 +1,49 @@
+<view class="container" bindtap="onPageTap">
+  <!-- 透明点击层用于捕获点击事件 -->
+  <!-- <view class="click-capture-layer" bindtap="onPageTap"></view> -->
+  
+  <view class="header">
+    <text class="title">班级小组展示</text>
+    <text class="subtitle">共7个小组</text>
+  </view>
+  
+  <view class="assistant-card" bindtap="goToAssistantDetail">
+    <view class="assistant-avatar">
+      <image src="/images/assistant-avatar.png" mode="aspectFill"></image>
+    </view>
+    <view class="assistant-info">
+      <text class="assistant-name">助教</text>
+    </view>
+    <view class="arrow">></view>
+  </view>
+  
+  <view class="groups-container">
+    <view 
+      class="group-card" 
+      wx:for="{{groups}}" 
+      wx:key="id"
+      bindtap="goToGroup"
+      data-groupId="{{item.id}}"
+      catchtap="goToGroup"  
+    >
+      <view class="group-number">第{{item.id}}组</view>
+      <view class="group-info">
+        <text class="group-name">{{item.name}}</text>
+        <text class="member-count">共{{item.memberCount}}人</text>
+      </view>
+      
+      <view class="call-count-section">
+        <view class="call-count-badge">
+          <text class="call-count-icon">👍</text>
+          <text class="call-count-number">{{groupCallCounts[item.id] || 0}}</text>
+        </view>
+      </view>
+      
+      <view class="arrow">></view>
+    </view>
+  </view>
+
+  <view class="teacher-call-tip" wx:if="{{showTeacherCallTip}}">
+    <text class="tip-message">{{teacherCallTipMessage}}</text>
+  </view>
+</view>

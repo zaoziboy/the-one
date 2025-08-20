@@ -1,0 +1,18 @@
+<!--pages/assistant-detail/assistant-detail.wxml-->
+<view class="assistant-detail-container">
+  <view class="assistant-header">
+    <image class="assistant-avatar" src="{{assistant.avatar}}" mode="aspectFill"></image>
+    <view class="assistant-basic-info">
+      <text class="assistant-name">{{assistant.name}}</text>
+      <text class="assistant-title">{{assistant.title}}</text>
+    </view>
+  </view>
+  
+  <view class="assistant-description">
+    <text>{{assistant.description}}</text>
+  </view>
+  
+  <view class="assistant-detail-content">
+    <text>{{assistant.detail}}</text>
+  </view>
+</view>

@@ -1,0 +1,148 @@
+.container {
+  background-color: #f0f8ff;
+  min-height: 100vh;
+  padding: 20rpx;
+}
+
+.group-header {
+  text-align: center;
+  padding: 40rpx 0;
+  background: white;
+  border-radius: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.group-title {
+  display: block;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #1976D2;
+  margin-bottom: 10rpx;
+}
+
+.group-desc {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.members-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.member-card {
+  background: white;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4rpx 12rpx rgba(25, 118, 210, 0.1);
+  border: 2rpx solid #e3f2fd;
+}
+
+.avatar-placeholder {
+  width: 80rpx;
+  height: 80rpx;
+  background: #1976D2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30rpx;
+  color: white;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.member-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.member-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.member-role {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.detail-arrow {
+  font-size: 32rpx;
+  color: #ccc;
+}
+
+/* 原有样式保持不变，添加以下新样式 */
+
+.call-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin: -20rpx -20rpx 30rpx -20rpx;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.call-btn {
+  background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+  color: white;
+  border: none;
+  border-radius: 50rpx;
+  padding: 25rpx 40rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8rpx 20rpx rgba(255, 107, 107, 0.3);
+  transition: all 0.3s ease;
+}
+
+.call-btn:active {
+  transform: translateY(2rpx);
+  box-shadow: 0 4rpx 12rpx rgba(255, 107, 107, 0.3);
+}
+
+.call-btn.called {
+  background: linear-gradient(45deg, #95a5a6, #bdc3c7);
+  box-shadow: 0 4rpx 12rpx rgba(149, 165, 166, 0.3);
+}
+
+.call-icon {
+  font-size: 36rpx;
+  margin-right: 15rpx;
+}
+
+.call-text {
+  margin-right: 10rpx;
+}
+
+.call-count {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 8rpx 16rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+}
+
+.call-tip {
+  display: block;
+  color: #999;
+  font-size: 24rpx;
+  margin-top: 15rpx;
+  text-align: center;
+}
+
+/* 原有的 members-list 样式保持不变，但调整 margin-top */
+.members-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  /* 移除原有的 margin-top，因为 call-section 现在在顶部 */
+}
