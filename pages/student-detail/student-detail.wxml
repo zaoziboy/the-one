@@ -1,0 +1,41 @@
+<view class="container">
+  <view class="detail-card">
+    <view class="avatar-large">
+      <text>{{student.name.charAt(0)}}</text>
+    </view>
+    
+    <view class="student-basic">
+      <text class="student-name">{{student.name}}</text>
+      <text class="student-role">第{{groupId}}组 - {{student.role}}</text>
+    </view>
+
+    <view class="detail-section" wx:if="{{showDetails}}">
+      <view class="section-title">详细信息</view>
+      <view class="detail-item">
+        <text class="label">学号：</text>
+        <text class="value">2024{{groupId.toString().padStart(2, '0')}}{{student.id.toString().padStart(2, '0')}}</text>
+      </view>
+      <view class="detail-item">
+        <text class="label">爱好：</text>
+        <text class="value">{{student.hobbies || '读书、运动、音乐'}}</text>
+      </view>
+      <view class="detail-item">
+        <text class="label">特长：</text>
+        <text class="value">{{student.skills || '学习能力强，团结同学'}}</text>
+      </view>
+      <view class="detail-item">
+        <text class="label">自我介绍：</text>
+        <text class="value">{{student.introduction || '我是一个积极向上的学生，愿意为小组贡献自己的力量。'}}</text>
+      </view>
+    </view>
+
+    <view class="actions">
+      <button 
+        class="detail-btn" 
+        bindtap="toggleDetails"
+      >
+        {{showDetails ? '收起详情' : '查看详情'}}
+      </button>
+    </view>
+  </view>
+</view>
