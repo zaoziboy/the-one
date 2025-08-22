@@ -1,0 +1,45 @@
+<!--pages/detail/detail.wxml-->
+<view class="detail-container" wx:if="{{discovery}}">
+  <image class="detail-image" src="{{discovery.imageUrl}}" mode="widthFix"></image>
+  
+  <view class="detail-content">
+    <text class="detail-title">{{discovery.title}}</text>
+    <text class="detail-description">{{discovery.description}}</text>
+    
+    <view class="detail-meta">
+      <view class="meta-item">
+        <image src="/images/location_icon.png" class="meta-icon"></image>
+        <text>{{discovery.distance}}km away</text>
+      </view>
+      <view class="meta-item">
+        <image src="/images/time_icon.png" class="meta-icon"></image>
+        <text>{{discovery.dateText}}</text>
+      </view>
+    </view>
+    
+    <view class="reaction-section">
+      <view class="reaction-btn" bindtap="addReaction" data-type="curious">
+        <image src="/images/curious_icon.png" class="reaction-icon"></image>
+        <text>好奇 {{discovery.reactions.curious}}</text>
+      </view>
+      <view class="reaction-btn" bindtap="addReaction" data-type="seen">
+        <image src="/images/seen_icon.png" class="reaction-icon"></image>
+        <text>我也见过 {{discovery.reactions.seen}}</text>
+      </view>
+    </view>
+  </view>
+  
+  <view class="similar-section" wx:if="{{similarDiscoveries.length > 0}}">
+    <text class="section-title">类似的「无用」发现</text>
+    <scroll-view class="similar-scroll" scroll-x>
+      <view class="similar-item" wx:for="{{similarDiscoveries}}" wx:key="id" bindtap="viewSimilar" data-id="{{item.id}}">
+        <image class="similar-image" src="{{item.imageUrl}}" mode="aspectFill"></image>
+        <text class="similar-title">{{item.title}}</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<view class="loading-container" wx:else>
+  <text>加载中...</text>
+</view>

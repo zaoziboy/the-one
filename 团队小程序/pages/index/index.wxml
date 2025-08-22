@@ -1,0 +1,55 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <map 
+    id="uselessMap" 
+    latitude="{{latitude}}" 
+    longitude="{{longitude}}"
+    markers="{{markers}}"
+    show-location
+    style="width: 100%; height: 70vh;"
+    bindmarkertap="onMarkerTap"
+  ></map>
+  
+  <view class="action-buttons">
+    <button class="btn add-btn" bindtap="goToAddPage">
+      <image src="/images/add_icon.png" mode="aspectFit"></image>
+      <text>添加观察</text>
+    </button>
+    
+    <button class="btn list-btn" bindtap="toggleListView">
+      <image src="/images/list_icon.png" mode="aspectFit"></image>
+      <text>{{showList ? '地图视图' : '列表视图'}}</text>
+    </button>
+  </view>
+  
+  <view class="discoveries-list" wx:if="{{showList}}">
+    <view class="section-title">附近的「无用」发现</view>
+    <view class="discovery-item" wx:for="{{nearbyDiscoveries}}" wx:key="id" bindtap="viewDiscovery" data-id="{{item.id}}">
+      <image class="discovery-image" src="{{item.imageUrl}}" mode="aspectFill"></image>
+      <view class="discovery-content">
+        <text class="discovery-title">{{item.title}}</text>
+        <text class="discovery-desc">{{item.description}}</text>
+        <view class="discovery-meta">
+          <text class="distance">{{item.distance}}km away</text>
+          <text class="date">{{item.dateText}}</text>
+        </view>
+        <view class="discovery-reactions">
+          <view class="reaction">
+            <image src="/images/curious_icon.png" class="reaction-icon"></image>
+            <text>{{item.reactions.curious}} 好奇</text>
+          </view>
+          <view class="reaction">
+            <image src="/images/seen_icon.png" class="reaction-icon"></image>
+            <text>{{item.reactions.seen}} 见过</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <view wx:if="{{nearbyDiscoveries.length === 0}}" class="empty-state">
+      <image src="/images/empty_icon.png" class="empty-icon"></image>
+      <text class="empty-text">附近还没有「无用」发现</text>
+      <button class="primary-btn" bindtap="goToAddPage">添加第一个发现</button>
+    </view>
+  </view>
+</view>
