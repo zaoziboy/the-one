@@ -1,0 +1,39 @@
+<!--pages/add/add.wxml-->
+<view class="add-container">
+  <view class="form-section">
+    <text class="section-title">分享你的「无用」发现</text>
+    
+    <view class="upload-area" bindtap="chooseImage">
+      <image wx:if="{{imageTempPath}}" src="{{imageTempPath}}" class="preview-image" mode="aspectFill"></image>
+      <view wx:else class="upload-placeholder">
+        <image src="/images/upload_icon.png" class="upload-icon"></image>
+        <text>添加照片</text>
+      </view>
+    </view>
+    
+    <view class="input-group">
+      <text class="input-label">标题</text>
+      <input class="input-field" placeholder="给你的发现起个名字" value="{{title}}" bindinput="onTitleInput" maxlength="30" />
+      <text class="char-count">{{title.length}}/30</text>
+    </view>
+    
+    <view class="input-group">
+      <text class="input-label">描述</text>
+      <textarea class="textarea-field" placeholder="描述一下这个发现的特别之处..." value="{{description}}" bindinput="onDescriptionInput" maxlength="200" />
+      <text class="char-count">{{description.length}}/200</text>
+    </view>
+    
+    <view class="location-group">
+      <text class="input-label">位置</text>
+      <view class="location-display">
+        <image src="/images/location_icon.png" class="location-icon"></image>
+        <text>{{locationText}}</text>
+      </view>
+      <button class="location-btn" bindtap="getLocation">重新定位</button>
+    </view>
+  </view>
+  
+  <button class="submit-btn" bindtap="submitDiscovery" disabled="{{!imageTempPath || !title || isSubmitting}}">
+    {{isSubmitting ? '发布中...' : '发布发现'}}
+  </button>
+</view>

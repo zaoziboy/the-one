@@ -1,0 +1,141 @@
+/* pages/index/index.wxss */
+.action-buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 20rpx;
+  background: white;
+  border-top: 1rpx solid var(--border-color);
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 10rpx 20rpx;
+  margin: 0;
+}
+
+.btn::after {
+  border: none;
+}
+
+.btn image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-bottom: 10rpx;
+}
+
+.btn text {
+  font-size: 24rpx;
+  color: var(--text-color);
+}
+
+.add-btn image {
+  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(200deg) brightness(98%) contrast(119%);
+}
+
+.discoveries-list {
+  background: #f9f9f9;
+  padding: 20rpx;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  color: var(--text-color);
+  padding-left: 10rpx;
+}
+
+.discovery-item {
+  display: flex;
+  background: white;
+  border-radius: 16rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.05);
+}
+
+.discovery-image {
+  width: 240rpx;
+  height: 180rpx;
+  flex-shrink: 0;
+}
+
+.discovery-content {
+  flex: 1;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.discovery-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+  display: block;
+  color: var(--text-color);
+}
+
+.discovery-desc {
+  font-size: 26rpx;
+  color: var(--text-light);
+  margin-bottom: 15rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+.discovery-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: var(--text-light);
+  margin-bottom: 15rpx;
+}
+
+.discovery-reactions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.reaction {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: var(--text-light);
+}
+
+.reaction-icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 8rpx;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100rpx 0;
+}
+
+.empty-icon {
+  width: 160rpx;
+  height: 160rpx;
+  opacity: 0.5;
+  margin-bottom: 30rpx;
+}
+
+.empty-text {
+  font-size: 30rpx;
+  color: var(--text-light);
+  margin-bottom: 40rpx;
+}
